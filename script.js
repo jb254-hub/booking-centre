@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const bannerContainer = document.querySelector('.banner-container');
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
