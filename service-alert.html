@@ -78,6 +78,18 @@
 
       countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
+
+    document.addEventListener('keydown', function (e) {
+    // F12 or Ctrl+Shift+I or Ctrl+U
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && e.key === "I") ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+      alert("Action disabled");
+    }
+  });
   </script>
 </body>
 </html>
