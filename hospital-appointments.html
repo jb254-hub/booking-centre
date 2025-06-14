@@ -83,6 +83,18 @@
     </div>
 
 </div>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('keydown', function (e) {
+    // F12 or Ctrl+Shift+I or Ctrl+U
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && e.key === "I") ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+      alert("Action disabled");
+    }
+  });
+  </script>
 </body>
 </html>
