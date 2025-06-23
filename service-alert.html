@@ -52,13 +52,13 @@
   <div class="container">
     <h1>We're Almost Ready!</h1>
     <p>This service will be available starting:</p>
-    <h2 class="date">20th June 2025</h2>
+    <h2 class="date">20th July 2025</h2>
     <div id="countdown"></div>
     <p class="footer">Thank you for your patience!</p>
   </div>
 
   <script>
-    const launchDate = new Date("June 20, 2025 00:00:00").getTime();
+    const launchDate = new Date("July 20, 2025 00:00:00").getTime(); // updated date
     const countdown = document.getElementById("countdown");
 
     const interval = setInterval(() => {
@@ -80,16 +80,17 @@
     }, 1000);
 
     document.addEventListener('keydown', function (e) {
-    // F12 or Ctrl+Shift+I or Ctrl+U
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && e.key === "I") ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-      alert("Action disabled");
-    }
-  });
+      // F12 or Ctrl+Shift+I or Ctrl+U
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && e.key === "I") ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+        alert("Action disabled");
+      }
+    });
   </script>
 </body>
 </html>
+
