@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Center | Secure Login Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-hover: #3a56d4;
+      --error: #ef233c;
+      --success: #4cc9f0;
+      --text: #2b2d42;
+      --light-gray: #f8f9fa;
+      --border: #e9ecef;
+      --radius: 8px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .tabs button {
+      flex: 1;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 0.75rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: #666;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .tabs button.active {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 80%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      background: var(--light-gray);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .message {
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: var(--radius);
+    }
+
+    .error {
+      color: var(--error);
+      background: rgba(239, 35, 60, 0.1);
+    }
+
+    .success {
+      color: var(--success);
+      background: rgba(76, 201, 240, 0.1);
+    }
+
+    .terms-label {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+    }
+
+    .terms-label input {
+      margin-right: 0.5rem;
+    }
+
+    .terms-label a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .terms-label a:hover {
+      text-decoration: underline;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 2.75rem;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 2.75rem;
+      color: #666;
+    }
+
+    .form-control.has-icon {
+      padding-left: 2.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="https://cdn-icons-png.flaticon.com/512/1532/1532556.png" alt="Booking Center Logo" class="logo" />
+    </div>
+
+    <div class="tabs">
+      <button id="loginTab" class="active">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <button id="registerTab">
+        <i class="fas fa-user-plus"></i> Register
+      </button>
+      <button id="forgotTab">
+        <i class="fas fa-key"></i> Forgot
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginUser">Email or Mobile</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <input type="text" id="loginUser" class="form-control has-icon" placeholder="Enter your email or mobile" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="loginPass">Password</label>
+        <div class="input-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <input type="password" id="loginPass" class="form-control has-icon" placeholder="Enter your password" required />
+        <i class="fas fa-eye password-toggle" id="toggleLoginPass"></i>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </div>
+      
+      <p id="loginMsg" class="message"></p>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="hidden">
+      <div class="form-group">
+        <label for="regUser">Email or Mobile</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <input type="text" id="regUser" class="form-control has-icon" placeholder="Enter your email or mobile" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="regPass">Password</label>
+        <div class="input-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <input type="password" id="regPass" class="form-control has-icon" placeholder="Create a password" required />
+        <i class="fas fa-eye password-toggle" id="toggleRegPass"></i>
+      </div>
+      
+      <div class="form-group">
+        <label for="regQuestion">Security Question</label>
+        <select id="regQuestion" class="form-control" required>
+          <option value="">Select a security question</option>
+          <option value="color">What is your favorite color?</option>
+          <option value="sport">What is your favorite sport?</option>
+          <option value="pet">What was your first pet?</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="regAnswer">Security Answer</label>
+        <select id="regAnswer" class="form-control" required>
+          <option value="">Select Answer</option>
+        </select>
+      </div>
+
+      <div class="terms-label">
+        <input type="checkbox" id="termsCheckbox" required />
+        <span>I agree to the <a href="/terms-conditions" target="_blank">Terms</a> and <a href="/terms-conditions/" target="_blank">Privacy Policy</a></span>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-user-plus"></i> Register
+        </button>
+      </div>
+      
+      <p id="regMsg" class="message"></p>
+    </form>
+
+    <!-- Forgot Password Form -->
+    <form id="forgotForm" class="hidden">
+      <div class="form-group">
+        <label for="forgotUser">Email or Mobile</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <input type="text" id="forgotUser" class="form-control has-icon" placeholder="Enter your email or mobile" required />
+      </div>
+      
+      <div class="form-group">
+        <button type="button" id="getQuestion" class="btn btn-secondary">
+          <i class="fas fa-question-circle"></i> Get Recovery Question
+        </button>
+      </div>
+      
+      <div id="recoverySection" class="hidden">
+        <div class="form-group">
+          <p id="recoveryQuestionText" style="font-weight: 500;"></p>
+        </div>
+        
+        <div class="form-group">
+          <label for="recoveryAnswer">Your Answer</label>
+          <select id="recoveryAnswer" class="form-control" required>
+            <option value="">Select Answer</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <input type="password" id="newPassword" class="form-control has-icon" placeholder="Enter new password" required />
+          <i class="fas fa-eye password-toggle" id="toggleNewPass"></i>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" id="resetBtn" class="btn btn-primary">
+            <i class="fas fa-sync-alt"></i> Reset Password
+          </button>
+        </div>
+      </div>
+      
+      <p id="forgotMsg" class="message"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>  
+</body>
+</html>

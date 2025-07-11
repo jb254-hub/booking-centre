@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories | Supermarket</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .category-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .category-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .category-card a {
+            display: block;
+            margin: 10px auto 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border-radius: 4px;
+            text-decoration: none;
+            width: 80%;
+            text-align: center;
+        }
+
+        .category-card a:hover {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" onkeyup="filterCategories()" placeholder="Search for booking sites...">
+    </div>
+
+    <div class="categories-container" id="categoriesContainer">
+        <div class="category-card">
+            <img src="https://th.bing.com/th?q=Booking.com+App+Download&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.1&pid=InlineBlock&mkt=en-WW&cc=KE&setlang=en&adlt=moderate&t=1&mw=247" alt="Booking.com">
+            <h3>Booking.com</h3>
+            <a href="https://www.booking.com/index.en-gb.html?label=gen173rf-1BCAEoggI46AdIM1gDaHaIAQGYAQm4ARfIAQzYAQHoAQGIAgGiAgtjaGF0Z3B0LmNvbagCA7gCh8eSvQbAAgHSAiQ1MjBkNjhkYS0zMThhLTQ4OGMtYjg5ZC1mMWFjNjUyY2JlMzjYAgXgAgE&sid=b03d92b1a01ce02a36039da184503dbf&keep_landing=1&sb_price_type=total&">Click Here To Explore</a>
+        </div>
+        <div class="category-card">
+            <img src="https://th.bing.com/th/id/OIP.0rnoBOD4WrtE4osquokEtwAAAA?w=194&h=182&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Kayak">
+            <h3>Kayak</h3>
+            <a href="https://www.kayak.com/">Click Here To Explore</a>
+        </div>
+        <div class="category-card">
+            <img src="https://th.bing.com/th/id/OIP.SZ1NxyeTIGk1TUlxfrl7tgAAAA?w=187&h=187&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Skyscanner">
+            <h3>Skyscanner</h3>
+            <a href="https://www.skyscanner.net/?previousCultureSource=COOKIE&redirectedFrom=www.skyscanner.com">Click Here To Explore</a>
+        </div>
+        <div class="category-card">
+            <img src="https://th.bing.com/th/id/OIP.uSz2xVs-uFCu2F47MqFNqgHaFj?w=245&h=184&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Travelstart">
+            <h3>Travelstart</h3>
+            <a href="https://www.travelstart.co.ke/">Click Here To Explore</a>
+        </div>
+        <div class="category-card">
+            <img src="https://th.bing.com/th?q=Expedia+Icon&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.1&pid=InlineBlock&mkt=en-WW&cc=KE&setlang=en&adlt=moderate&t=1&mw=247" alt="Expedia">
+            <h3>Expedia</h3>
+            <a href="https://www.expedia.com/">Click Here To Explore</a>
+        </div>
+        <div class="category-card">
+            <img src="https://th.bing.com/th/id/OIP.23haNUaL1EntGYZRNuT_cwHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Wego">
+            <h3>Wego</h3>
+            <a href="https://ke.wego.com/">Click Here To Explore</a>
+        </div>
+
+    <script>
+        function filterCategories() {
+            var input, filter, container, cards, cardTitle, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            container = document.getElementById('categoriesContainer');
+            cards = container.getElementsByClassName('category-card');
+
+            for (i = 0; i < cards.length; i++) {
+                cardTitle = cards[i].getElementsByTagName('h3')[0];
+                if (cardTitle) {
+                    txtValue = cardTitle.textContent || cardTitle.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        cards[i].style.display = "";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    // F12 or Ctrl+Shift+I or Ctrl+U
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && e.key === "I") ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+      alert("Action disabled");
+    }
+  });
+    </script>
+
+</body>
+
+</html>
