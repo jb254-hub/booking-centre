@@ -55,7 +55,7 @@ initDB().catch(err => {
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://bookingcentre.site/',
+  origin: '*',
   credentials: true
 }));
 
