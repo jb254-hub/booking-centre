@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://booking-centre.onrender.com';
     const answerOptions = {
       color: ['Red','Blue','Green','Yellow'],
       sport: ['Football','Basketball','Tennis','Cricket'],
