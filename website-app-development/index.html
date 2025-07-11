@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Website/App Request Form</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f5f5f5;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, textarea {
+      width: 100%;
+      margin: 10px 0 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 align="center">Request a Free Website or App</h2>
+
+  <form id="requestForm">
+    <label>Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Mobile Number or Email:</label>
+    <input type="text" id="contact" required placeholder="Enter 10-digit mobile or your email">
+
+    <label>Type of System:</label>
+    <select id="systemType" required>
+      <option value="">-- Select --</option>
+      <option value="Website">Website</option>
+      <option value="Mobile App">Mobile App</option>
+      <option value="Both">Both</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label>Describe the System (website/app):</label>
+    <textarea id="description" rows="5" required></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDLCEEb2UekDILOI2aqsf5nlx2rRtYtlLc",
+      authDomain: "booking-centre.firebaseapp.com",
+      projectId: "booking-centre",
+      storageBucket: "booking-centre.firebasestorage.app",
+      messagingSenderId: "1024985975701",
+      appId: "1:1024985975701:web:c557f9174d977bdd77049c",
+      measurementId: "G-CDNBSSHY8H"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("requestForm");
+
+    function sanitizeInput(input) {
+      return input.replace(/['";]/g, '').trim();
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = sanitizeInput(document.getElementById("name").value);
+      const contact = sanitizeInput(document.getElementById("contact").value);
+      const systemType = sanitizeInput(document.getElementById("systemType").value);
+      const description = sanitizeInput(document.getElementById("description").value);
+
+      // If input is only digits, it must be 10 digits
+      const isNumeric = /^\d+$/.test(contact);
+      if (isNumeric && contact.length !== 10) {
+        Swal.fire('Invalid Number', 'If you are entering a mobile number, it must be exactly 10 digits.', 'warning');
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "systemRequests"), {
+          name,
+          contact,
+          systemType,
+          description,
+          timestamp: serverTimestamp()
+        });
+
+        Swal.fire({
+          title: 'Request Submitted!',
+          text: 'You will get feedback soon with complete developed system.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          window.location.href = "https://bookingcentre.site/";
+        });
+
+        form.reset();
+      } catch (error) {
+        console.error("Error submitting request:", error);
+        Swal.fire('Error', 'Something went wrong. Please try again later.', 'error');
+      }
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+  e.preventDefault(); // Disables right-click
+});
+
+document.addEventListener('keydown', function (e) {
+  // Disables F12, Ctrl+Shift+I, Ctrl+U
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+    alert("Action disabled");
+  }
+});
+
+  </script>
+
+</body>
+</html>
