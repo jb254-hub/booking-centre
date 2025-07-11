@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // === POSTGRES SETUP ===
 const pgPool = new Pool({
@@ -14,7 +14,10 @@ const pgPool = new Pool({
   password: 'iMT2BtyQUVXtqMas0BsuoveCJBfNgF7Y',
   host: 'dpg-d1oc25ruibrs73civ41g-a',
   port: 5432,
-  database: 'bookingservices'
+  database: 'bookingservices',
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // === DB INIT ===
@@ -55,7 +58,7 @@ initDB().catch(err => {
 app.use(express.json());
 
 app.use(cors({
-  origin: '*',
+  origin: 'https://bookingcentre.site/', // Replace with your frontend domain
   credentials: true
 }));
 
@@ -64,13 +67,13 @@ app.use(session({
     pool: pgPool,
     tableName: 'session'
   }),
-  secret: 'your_super_secret_session_key',
+  secret: '678jacj7888',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 7,
+    maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
     httpOnly: true,
-    secure: false,
+    secure: process.env.NODE_ENV === 'production', // true in production
     sameSite: 'lax'
   }
 }));
@@ -238,6 +241,5 @@ app.get('/api/status', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
-
