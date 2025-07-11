@@ -10,11 +10,11 @@ const PORT = 3000;
 
 // === POSTGRES SETUP ===
 const pgPool = new Pool({
-  user: 'postgres',
-  password: '20019',
-  host: 'localhost',
+  user: 'bookingservices_user',
+  password: 'iMT2BtyQUVXtqMas0BsuoveCJBfNgF7Y',
+  host: 'dpg-d1oc25ruibrs73civ41g-a',
   port: 5432,
-  database: 'tut'
+  database: 'bookingservices'
 });
 
 // === DB INIT ===
