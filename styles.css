@@ -208,8 +208,8 @@ footer img {
 }
 
 :root {
-  --primary: #28a745;
-  --dark: green;
+  --primary: green;
+  --dark: #f4f4f4;
 }
 
 .sidenav {
@@ -229,7 +229,7 @@ footer img {
   padding: 15px 30px;
   text-decoration: none;
   font-size: 18px;
-  color: white;
+  color: green;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -246,7 +246,7 @@ footer img {
   right: 25px;
   font-size: 30px;
   cursor: pointer;
-  color: white;
+  color: green;
 }
 
 .overlay {
