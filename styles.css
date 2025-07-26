@@ -206,3 +206,62 @@ footer a {
 footer img {
     vertical-align: middle;
 }
+
+:root {
+  --primary: #28a745;
+  --dark: green;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  background-color: var(--dark);
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.sidenav a:hover {
+  background-color: var(--primary);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.menu-icon {
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--dark); /* Change based on your theme */
+}
