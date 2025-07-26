@@ -265,3 +265,22 @@ footer img {
   cursor: pointer;
   color: var(--dark); /* Change based on your theme */
 }
+
+
+
+
+
+.sliding-text-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the combo */
+  background-color: #f4f4f4;
+  padding: 1rem;
+  gap: 1rem; /* space between icon and title */
+}
+
+.sliding-text-header .menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  color: green; /* or var(--dark) */
+}
