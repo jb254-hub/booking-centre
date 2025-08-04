@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Booking Centre Kenya</title>
+  <title>Contact Us | Booking Centre</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
+      margin: 0;
+      background: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
     header {
-      background-color: #005f73;
-      color: #fff;
+      background: #0a9396;
+      color: white;
       padding: 2rem;
       text-align: center;
     }
@@ -24,119 +25,115 @@
       font-size: 2.5rem;
     }
     main {
-      padding: 2rem;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     section {
       margin-bottom: 2rem;
     }
     h2 {
-      color: #005f73;
+      color: #0a9396;
       font-size: 1.8rem;
-      margin-bottom: 1rem;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
+    .contact-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
-    ul li::before {
-      content: "✅ ";
-      color: green;
-    }
-    .services {
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
-    }
-    .contact {
+    .info-item {
       background: #e0fbfc;
       padding: 1rem;
       border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
+    .info-item i {
+      font-size: 1.5rem;
+      color: #0a9396;
     }
-    .cta a {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #0a9396;
-      color: white;
+    .info-item a {
+      color: #333;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      font-weight: 600;
     }
-    .cta a:hover {
-      background-color: #00797a;
+    .info-item a:hover {
+      color: #00797a;
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 2rem;
+      color: #0a9396;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #005f73;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>About Booking Centre</h1>
-    <p>Kenya’s #1 All-in-One Booking Platform 🇰🇪🚀</p>
+    <h1>Contact Us</h1>
+    <p>We're here to help you get started, get support, or grow with Booking Centre.</p>
   </header>
 
   <main>
     <section>
-      <h2>Our Mission</h2>
-      <p>To empower every service provider in Kenya with world-class digital tools that simplify booking, boost visibility, and drive business growth – without the burden of high costs or technical challenges.</p>
-    </section>
-
-    <section>
-      <h2>What We Offer</h2>
-      <ul>
-        <li>100% FREE Website & App Development</li>
-        <li>Direct integration with www.bookingcentre.site</li>
-        <li>Daily visibility to thousands of users</li>
-        <li>Zero subscription or commission fees</li>
-        <li>Ongoing marketing and promotional support</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>What Can Be Booked?</h2>
-      <div class="services">
-        <ul>
-          <li>Hotels & Restaurants</li>
-          <li>Ambulance</li>
-          <li>Bus, Flight, Car Rental & Train</li>
-          <li>Event Booking</li>
-          <li>Affordable Housing</li>
-          <li>Hospital Appointments</li>
-          <li>Artists, MCs, DJs</li>
-          <li>Legal & Career Consultations</li>
-          <li>Tutors, Babysitting</li>
-          <li>Photographers & Videographers</li>
-          <li>Study Abroad & Influencers</li>
-          <li>Online Courses</li>
-          <li>Agritech Services</li>
-          <li>Helicopter Charters</li>
-          <li>Tour Guides & Gameparks</li>
-          <li>Delivery Services</li>
-          <li>Tourist Sites</li>
-          <li>...and much more</li>
-        </ul>
+      <h2>Get in Touch</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:infobookingcentre@gmail.com">infobookingcentre@gmail.com</a>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+254793855917">Call: 0793 855 917</a>
+        </div>
+        <div class="info-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/254793855917" target="_blank">WhatsApp Chat</a>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-sms"></i>
+          <a href="sms:+254793855917">Send SMS</a>
+        </div>
+        <div class="info-item">
+          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/booking_centre.site/" target="_blank">Instagram</a>
+        </div>
       </div>
     </section>
 
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p><strong>Website:</strong> <a href="https://www.bookingcentre.site" target="_blank">www.bookingcentre.site</a></p>
-      <p><strong>Phone:</strong> 0793 855 917</p>
-      <p><strong>Email:</strong> bookingservices@bookingcentre.site</p>
+    <section class="social-icons">
+      <h2>Connect With Us</h2>
+      <a href="https://www.facebook.com/share/1Avhhj59ZY/" target="_blank" title="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/booking_centre.site/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/254793855917" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:+254793855917" title="Call">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="mailto:infobookingcentre@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
     </section>
-
-    <div class="cta">
-      <a href="https://www.bookingcentre.site" target="_blank">Join Now – It’s Free!</a>
-    </div>
   </main>
 
   <script>
-    // You can add interactivity here later if needed
-    console.log("Welcome to Booking Centre!");
+    console.log("Contact page loaded for Booking Centre");
   </script>
 </body>
 </html>
