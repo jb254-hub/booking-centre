@@ -3,145 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Booking Centre</title>
+  <title>Our Services | Booking Centre</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
       color: #333;
-      line-height: 1.6;
     }
     header {
       background: white;
-      color: green;
       padding: 2rem;
       text-align: center;
+      color: green;
     }
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 2rem auto;
       padding: 1rem;
+    }
+    .service-category {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
+    .service-category h2 {
       color: green;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
     }
-    .contact-info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    .service-category ul {
+      padding-left: 1.2rem;
     }
-    .info-item {
-      background: #e0fbfc;
-      padding: 1rem;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .info-item i {
-      font-size: 1.5rem;
-      color: green;
-    }
-    .info-item a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .info-item a:hover {
-      color: green;
-    }
-    .social-icons {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 2rem;
-      color: #0a9396;
-      transition: color 0.3s;
-    }
-    .social-icons a:hover {
-      color: green;
+    .service-category li {
+      margin-bottom: 0.4rem;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
-    <p>We're here to help you get started, get support, or grow with Booking Centre.</p>
+    <h1>Our Services</h1>
+    <p>Explore the wide range of services you can book or offer with Booking Centre</p>
   </header>
 
   <main>
-    <section>
-      <h2>Get in Touch</h2>
-      
-        <div class="info-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:infobookingcentre@gmail.com">infobookingcentre@gmail.com</a>
-        </div>
-        <div class="info-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+254793855917">Call: 0793 855 917</a>
-        </div>
-        <div class="info-item">
-          <i class="fab fa-whatsapp"></i>
-          <a href="https://wa.me/254793855917" target="_blank">WhatsApp Chat</a>
-        </div>
-        <div class="info-item">
-          <i class="fas fa-sms"></i>
-          <a href="sms:+254793855917">Send SMS</a>
-        </div>
-        <div class="info-item">
-          <i class=""></i>
-          <a href="https://x.com/Bookingsite_254">X</a>
-        </div>
-        <div class="info-item">
-          <i class=""></i>
-          <a href="https://www.facebook.com/profile.php?id=6157703161574">Facebook</a>
-        </div>
-        <div class="info-item">
-          <i class="fab fa-instagram"></i>
-          <a href="https://www.instagram.com/booking_centre.site/" target="_blank">Instagram</a>
-        </div>
-      </div>
+    <section class="service-category">
+      <h2>Travel & Transport</h2>
+      <ul>
+        <li>Bus Booking</li>
+        <li>Flight Booking</li>
+        <li>Train Booking</li>
+        <li>Car Rentals</li>
+        <li>Helicopter Charters</li>
+      </ul>
     </section>
 
-    <section class="social-icons">
-      <h2>Connect With Us</h2>
-      <a href="https://www.facebook.com/share/1Avhhj59ZY/" target="_blank" title="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/booking_centre.site/" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/254793855917" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="tel:+254793855917" title="Call">
-        <i class="fas fa-phone"></i>
-      </a>
-      <a href="mailto:infobookingcentre@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+    <section class="service-category">
+      <h2>Hospitality</h2>
+      <ul>
+        <li>Hotel Booking</li>
+        <li>Restaurant Reservations</li>
+        <li>Affordable Housing Booking</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Health & Wellness</h2>
+      <ul>
+        <li>Hospital Appointments</li>
+        <li>Ambulance Services</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Events & Entertainment</h2>
+      <ul>
+        <li>Event Booking</li>
+        <li>MCs / DJs / Event Hosts</li>
+        <li>Artists & Performers</li>
+        <li>Photographers & Videographers</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Education & Coaching</h2>
+      <ul>
+        <li>Private Tutors</li>
+        <li>Online Courses</li>
+        <li>Career Coaching & Mentorship</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Consultation & Professional Services</h2>
+      <ul>
+        <li>Legal Consultation</li>
+        <li>Study Abroad Agents</li>
+        <li>Influencers & Content Creators</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Family & Lifestyle</h2>
+      <ul>
+        <li>Babysitting & Childcare</li>
+        <li>Delivery Services</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Tourism & Nature</h2>
+      <ul>
+        <li>Tour Guide Booking</li>
+        <li>Tourist Attractions</li>
+        <li>Game Parks & Game Reserves</li>
+      </ul>
+    </section>
+
+    <section class="service-category">
+      <h2>Agritech</h2>
+      <ul>
+        <li>Agritech Services</li>
+      </ul>
     </section>
   </main>
-
-  <script>
-    console.log("Contact page loaded for Booking Centre");
-  </script>
 </body>
 </html>
