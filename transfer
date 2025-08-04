@@ -3,33 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Booking Centre</title>
+  <title>Partner With Us | Booking Centre</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       background: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
     header {
-      background: #0a9396;
+      background: #005f73;
       color: white;
       padding: 2rem;
       text-align: center;
     }
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
+      margin: 0;
     }
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background: white;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     section {
@@ -38,102 +36,84 @@
     h2 {
       color: #0a9396;
       font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
-    .contact-info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    p, li {
+      font-size: 1rem;
     }
-    .info-item {
-      background: #e0fbfc;
-      padding: 1rem;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
-    .info-item i {
-      font-size: 1.5rem;
-      color: #0a9396;
+    ul li::before {
+      content: "\2714\0020";
+      color: green;
     }
-    .info-item a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .info-item a:hover {
-      color: #00797a;
-    }
-    .social-icons {
+    .cta {
       text-align: center;
       margin-top: 2rem;
     }
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 2rem;
-      color: #0a9396;
-      transition: color 0.3s;
+    .cta a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #0a9396;
+      color: white;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
     }
-    .social-icons a:hover {
-      color: #005f73;
+    .cta a:hover {
+      background-color: #00797a;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
-    <p>We're here to help you get started, get support, or grow with Booking Centre.</p>
+    <h1>Partner With Us</h1>
+    <p>Join Kenya’s fastest-growing all-in-one booking ecosystem</p>
   </header>
 
   <main>
     <section>
-      <h2>Get in Touch</h2>
-      <div class="contact-info">
-        <div class="info-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:infobookingcentre@gmail.com">infobookingcentre@gmail.com</a>
-        </div>
-        <div class="info-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+254793855917">Call: 0793 855 917</a>
-        </div>
-        <div class="info-item">
-          <i class="fab fa-whatsapp"></i>
-          <a href="https://wa.me/254793855917" target="_blank">WhatsApp Chat</a>
-        </div>
-        <div class="info-item">
-          <i class="fas fa-sms"></i>
-          <a href="sms:+254793855917">Send SMS</a>
-        </div>
-        <div class="info-item">
-          <i class="fab fa-instagram"></i>
-          <a href="https://www.instagram.com/booking_centre.site/" target="_blank">Instagram</a>
-        </div>
-      </div>
+      <h2>Why Partner with Booking Centre?</h2>
+      <p>We are on a mission to digitize Kenya’s service industry — and we want you to be part of it! Whether you’re a business, freelancer, or professional service provider, Booking Centre provides a platform where customers can find and book your services instantly.</p>
+      <ul>
+        <li>100% Free website and app for your business</li>
+        <li>Integrated into our central booking system</li>
+        <li>Increased exposure and visibility</li>
+        <li>Zero commissions or monthly fees</li>
+        <li>Real-time bookings and customer management</li>
+        <li>Marketing and promotional support included</li>
+      </ul>
     </section>
 
-    <section class="social-icons">
-      <h2>Connect With Us</h2>
-      <a href="https://www.facebook.com/share/1Avhhj59ZY/" target="_blank" title="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/booking_centre.site/" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/254793855917" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="tel:+254793855917" title="Call">
-        <i class="fas fa-phone"></i>
-      </a>
-      <a href="mailto:infobookingcentre@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+    <section>
+      <h2>Who Can Partner?</h2>
+      <p>If your service can be booked, we want you onboard! Ideal for:</p>
+      <ul>
+        <li>Hotels, Restaurants & Resorts</li>
+        <li>Transport services (Buses, Flights, Trains, Car Rentals)</li>
+        <li>Healthcare providers and professionals</li>
+        <li>Freelancers: DJs, Photographers, Artists</li>
+        <li>Tutors, Consultants, Legal Advisors</li>
+        <li>Delivery, Agritech, Tourism & more</li>
+      </ul>
     </section>
+
+    <section>
+      <h2>How to Get Started</h2>
+      <ol>
+        <li>Visit <a href="https://www.bookingcentre.site" target="_blank">www.bookingcentre.site</a></li>
+        <li>Click “Register” or “Get Started for Free”</li>
+        <li>Fill out your service details</li>
+        <li>We build your platform — FREE!</li>
+      </ol>
+    </section>
+
+    <div class="cta">
+      <a href="https://www.bookingcentre.site" target="_blank">Become a Partner – Join Now</a>
+    </div>
   </main>
-
-  <script>
-    console.log("Contact page loaded for Booking Centre");
-  </script>
 </body>
 </html>
