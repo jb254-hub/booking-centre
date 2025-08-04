@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Service Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
@@ -23,7 +25,10 @@
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      max-width: 600px;
+      width: 100%;
     }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
@@ -40,6 +45,38 @@
       margin: 20px 0;
     }
 
+    .notice {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .contact-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+    }
+
+    .contact-item a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
     .footer {
       margin-top: 30px;
       font-size: 1rem;
@@ -51,13 +88,27 @@
   <div class="container">
     <h1>We're Almost Ready!</h1>
     <p>This service will be available starting:</p>
-    <h2 class="date">20th July 2025</h2>
+    <h2 class="date">20th August 2025</h2>
     <div id="countdown"></div>
+
+    <div class="notice">
+      To register your site, please contact us via:
+      <div class="contact-list">
+        <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:infobookingcentre@gmail.com">infobookingcentre@gmail.com</a></div>
+        <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+254793855917">0793 855 917</a></div>
+        <div class="contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254793855917" target="_blank">WhatsApp</a></div>
+        <div class="contact-item"><i class="fas fa-sms"></i> <a href="sms:+254793855917">Send SMS</a></div>
+        <div class="contact-item"><i class="fab fa-x-twitter"></i> <a href="https://x.com/Bookingsite_254" target="_blank">X</a></div>
+        <div class="contact-item"><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=6157703161574" target="_blank">Facebook</a></div>
+        <div class="contact-item"><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/booking_centre.site/" target="_blank">Instagram</a></div>
+      </div>
+    </div>
+
     <p class="footer">Thank you for your patience!</p>
   </div>
 
   <script>
-    const launchDate = new Date("July 20, 2025 00:00:00").getTime(); // updated date
+    const launchDate = new Date("August 20, 2025 00:00:00").getTime();
     const countdown = document.getElementById("countdown");
 
     const interval = setInterval(() => {
@@ -79,7 +130,6 @@
     }, 1000);
 
     document.addEventListener('keydown', function (e) {
-      // F12 or Ctrl+Shift+I or Ctrl+U
       if (
         e.key === "F12" ||
         (e.ctrlKey && e.shiftKey && e.key === "I") ||
@@ -92,4 +142,3 @@
   </script>
 </body>
 </html>
-
